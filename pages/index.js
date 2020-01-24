@@ -1,5 +1,11 @@
+import Hero from "../components/Home/Hero";
+
 export default function({ data }) {
-  return <div>{JSON.stringify(data)}</div>;
+  return (
+    <div>
+      <Hero headline={data.hero.headline} subheadline={data.hero.subheadline} />
+    </div>
+  );
 }
 
 export async function unstable_getStaticProps() {
