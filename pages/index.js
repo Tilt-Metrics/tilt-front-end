@@ -1,5 +1,6 @@
 import Hero from "../components/Home/Hero";
 import Clients from "../components/Home/Clients";
+import Services from "../components/Home/Services";
 
 export default function({ data }) {
   return (
@@ -9,6 +10,12 @@ export default function({ data }) {
         label={data.clients.label}
         headline={data.clients.headline}
         logos={data.clients.logos}
+      />
+      <Services
+        label={data.services.label}
+        headline={data.services.headline}
+        subheadline={data.services.subheadline}
+        servicesGroup={data.services.servicesGroup}
       />
     </div>
   );
