@@ -1,9 +1,15 @@
 import Hero from "../components/Home/Hero";
+import Clients from "../components/Home/Clients";
 
 export default function({ data }) {
   return (
     <div>
       <Hero headline={data.hero.headline} subheadline={data.hero.subheadline} />
+      <Clients
+        label={data.clients.label}
+        headline={data.clients.headline}
+        logos={data.clients.logos}
+      />
     </div>
   );
 }
