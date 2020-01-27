@@ -1,6 +1,7 @@
 import Hero from "../components/Home/Hero";
 import Clients from "../components/Home/Clients";
 import Services from "../components/Home/Services";
+import Testimonial from "../components/Home/Testimonial";
 
 export default function({ data }) {
   return (
@@ -16,6 +17,13 @@ export default function({ data }) {
         headline={data.services.headline}
         subheadline={data.services.subheadline}
         servicesGroup={data.services.servicesGroup}
+      />
+      <Testimonial
+        quote={data.testimonial.quote}
+        author={data.testimonial.author}
+        title={data.testimonial.title}
+        image={data.testimonial.image.url}
+        stats={data.testimonial.stats}
       />
     </div>
   );
