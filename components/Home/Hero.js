@@ -9,7 +9,6 @@ function Hero(props) {
         backgroundImage: "url('/img/hero-bg.png')",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom center",
-        fontFamily: theme.fonts.body,
         marginBottom: theme.spacing[3],
         height: "100vh",
         width: "100%"
@@ -31,7 +30,8 @@ function Hero(props) {
         <h1
           css={theme => ({
             fontSize: theme.headingSizes[3],
-            marginBottom: theme.spacing[1]
+            marginBottom: theme.spacing[1],
+            fontFamily: theme.fonts.display
           })}
         >
           {props.headline}
