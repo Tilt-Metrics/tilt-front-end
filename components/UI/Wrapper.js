@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 
-const Wrapper = styled.div({
+const Wrapper = styled.div(props => ({
   margin: "0 auto",
-  maxWidth: props => props.theme.maxWidth[props.width],
+  maxWidth: props.theme.maxWidths[props.width],
   padding: "0px 30px"
-});
+}));
 
 Wrapper.defaultProps = {
   width: 1
