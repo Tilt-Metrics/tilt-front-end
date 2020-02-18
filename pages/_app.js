@@ -1,10 +1,15 @@
 import "minireset.css";
+import { useRouter } from "next/router";
 import { Global, css } from "@emotion/core";
 import { ThemeProvider } from "emotion-theming";
+import { motion, AnimatePresence } from "framer-motion";
+
 import theme from "../lib/theme";
 import Footer from "../components/Footer";
 
 export default function({ Component, pageProps }) {
+  const router = useRouter();
+
   return (
     <>
       <Global
@@ -17,8 +22,20 @@ export default function({ Component, pageProps }) {
         `}
       />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-        <Footer />
+        <AnimatePresence exitBeforeEnter initial={false}>
+          <motion.div
+            key={router.asPath}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.3
+            }}
+          >
+            <Component {...pageProps} />
+            <Footer />
+          </motion.div>
+        </AnimatePresence>
       </ThemeProvider>
     </>
   );
