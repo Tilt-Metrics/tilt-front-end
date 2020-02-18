@@ -9,8 +9,8 @@ export default function({ data }) {
     <Wrapper
       width={0}
       css={theme => ({
-        marginBottom: theme.spacing[2],
-        marginTop: theme.spacing[2]
+        marginBottom: theme.spacing[3],
+        marginTop: theme.spacing[3]
       })}
     >
       {data.map(d => (
