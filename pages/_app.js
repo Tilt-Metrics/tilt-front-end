@@ -2,6 +2,7 @@ import "minireset.css";
 import { Global, css } from "@emotion/core";
 import { ThemeProvider } from "emotion-theming";
 import theme from "../lib/theme";
+import Footer from "../components/Footer";
 
 export default function({ Component, pageProps }) {
   return (
@@ -17,6 +18,7 @@ export default function({ Component, pageProps }) {
       />
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </>
   );
