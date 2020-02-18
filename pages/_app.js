@@ -5,6 +5,7 @@ import { ThemeProvider } from "emotion-theming";
 import { motion, AnimatePresence } from "framer-motion";
 
 import theme from "../lib/theme";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function({ Component, pageProps }) {
@@ -32,6 +33,7 @@ export default function({ Component, pageProps }) {
               duration: 0.3
             }}
           >
+            <Header />
             <Component {...pageProps} />
             <Footer />
           </motion.div>
