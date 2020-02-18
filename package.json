@@ -16,6 +16,7 @@
     "emotion-theming": "^10.0.27",
     "facepaint": "^1.2.1",
     "framer-motion": "^1.7.3",
+    "htmr": "^0.8.8",
     "minireset.css": "0.0.6",
     "next": "^9.2.1",
     "node-fetch": "^2.6.0",
