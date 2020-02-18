@@ -1,104 +1,67 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { mq } from "../../lib/utils";
+import Wrapper from "../UI/Wrapper";
+import Headline from "../UI/Headline";
+import Text from "../UI/Text";
 
 function Services(props) {
   return (
-    <div
-      css={theme => ({
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "column",
-        fontFamily: theme.fonts.body,
-        height: "100%",
-        justifyContent: "center",
-        margin: "0 auto",
-        marginBottom: theme.spacing[3],
-        maxWidth: theme.maxWidths[1]
-      })}
-    >
-      <span
-        css={theme => ({
-          color: theme.colors.brightBlue,
-          display: "block",
-          marginBottom: theme.spacing[0],
-          textTransform: "uppercase",
-          fontWeight: "bold"
-        })}
+    <Wrapper>
+      <Text
+        size={0}
+        color="brightBlue"
+        uppercase
+        bold
+        css={{ textAlign: "center" }}
       >
         {props.label}
-      </span>
-      <h2
-        css={theme => ({
-          fontSize: theme.headingSizes[1],
-          marginBottom: theme.spacing[1],
-          maxWidth: theme.maxWidths[0],
+      </Text>
+      <Headline
+        size={1}
+        as="h2"
+        css={{
           textAlign: "center"
-        })}
+        }}
       >
         {props.headline}
-      </h2>
-      <p
-        css={theme => ({
-          fontSize: theme.headingSizes[0],
-          marginBottom: theme.spacing[2],
-          maxWidth: theme.maxWidths[0],
+      </Headline>
+      <Text
+        css={{
           textAlign: "center"
-        })}
+        }}
       >
         {props.subheadline}
-      </p>
-      <div>
+      </Text>
+      <div
+        css={mq({
+          display: "grid",
+          gridTemplateColumns: ["1fr", "1fr 1fr 1fr"],
+          gridGap: 80
+        })}
+      >
         {props.servicesGroup.map((s, idx) => (
-          <div
-            css={theme =>
-              mq({
-                display: "grid",
-                gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"],
-                marginBottom: theme.spacing[3],
-                gridRowGap: ["10%", "auto"],
-                gridAutoRows: "min-content",
-                gridAutoFlow: "row"
-              })
-            }
-          >
-            <div>
-              <img src={s.image.url} />
-            </div>
-            <div css={mq({ padding: ["0px 30px", "0px 100px"] })}>
-              <span
-                css={theme => ({
-                  color: theme.colors.brightBlue,
-                  display: "block",
-                  marginBottom: theme.spacing[0],
-                  textTransform: "uppercase",
-                  fontWeight: "bold"
-                })}
-              >{`0${idx + 1}`}</span>
-              <h4
-                css={theme => ({
-                  color: theme.colors.brightBlue,
-                  fontSize: theme.headingSizes[2],
-                  marginBottom: theme.spacing[0],
-                  maxWidth: theme.maxWidths[0]
-                })}
-              >
-                {s.title}
-              </h4>
-              <p
-                css={theme => ({
-                  color: theme.colors.concrete,
-                  fontSize: theme.copySizes[1],
-                  lineHeight: theme.lineHeights[1]
-                })}
-              >
-                {s.description}
-              </p>
-            </div>
+          <div key={idx}>
+            <Headline
+              size={0}
+              spacing={0}
+              css={theme => ({
+                color: theme.colors.brightBlue
+              })}
+            >
+              {s.title}
+            </Headline>
+            <ul>
+              {s.list.map(item => (
+                <Text spacing={0} as="li">
+                  {item.text}
+                </Text>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
-    </div>
+    </Wrapper>
   );
 }
 

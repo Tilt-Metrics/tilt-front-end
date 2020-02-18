@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import Headline from "../UI/Headline";
 
 function Hero(props) {
   return (
@@ -27,22 +28,10 @@ function Hero(props) {
           textAlign: "center"
         })}
       >
-        <h1
-          css={theme => ({
-            fontSize: theme.headingSizes[3],
-            marginBottom: theme.spacing[1],
-            fontFamily: theme.fonts.display
-          })}
-        >
-          {props.headline}
-        </h1>
-        <h2
-          css={theme => ({
-            fontSize: theme.headingSizes[1]
-          })}
-        >
+        <Headline display>{props.headline}</Headline>
+        <Headline as="h2" size={1}>
           {props.subheadline}
-        </h2>
+        </Headline>
       </div>
     </div>
   );
