@@ -10,6 +10,7 @@ function Hero(props) {
         backgroundColor: theme.colors.brightBlue,
         backgroundImage: "url('/img/hero-bg.png')",
         backgroundRepeat: "no-repeat",
+        backgroundSize: "100% auto",
         backgroundPosition: "bottom center",
         marginBottom: theme.spacing[3],
         height: "100vh",
