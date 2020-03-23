@@ -5,6 +5,7 @@ import Headline from "../UI/Headline";
 function Hero(props) {
   return (
     <div
+      id="hero"
       css={theme => ({
         backgroundColor: theme.colors.brightBlue,
         backgroundImage: "url('/img/hero-bg.png')",
