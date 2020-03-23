@@ -1,11 +1,8 @@
 import "minireset.css";
-import { useRouter } from "next/router";
 import { Global, css } from "@emotion/core";
 import { ThemeProvider } from "emotion-theming";
 
 import theme from "../lib/theme";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 export default function({ Component, pageProps }) {
   return (
@@ -20,9 +17,7 @@ export default function({ Component, pageProps }) {
         `}
       />
       <ThemeProvider theme={theme}>
-        <Header />
         <Component {...pageProps} />
-        <Footer />
       </ThemeProvider>
     </>
   );

@@ -1,3 +1,4 @@
+import Layout from "../components/Layout";
 import Hero from "../components/Home/Hero";
 import Clients from "../components/Home/Clients";
 import Process from "../components/Home/Process";
@@ -7,7 +8,7 @@ import ContactForm from "../components/Home/ContactForm";
 
 export default function({ data }) {
   return (
-    <div>
+    <Layout>
       <Hero headline={data.hero.headline} subheadline={data.hero.subheadline} />
       <Services
         label={data.services.label}
@@ -34,7 +35,7 @@ export default function({ data }) {
         subheadline={data.contact.subheadline}
         buttonText={data.contact.buttontext}
       />
-    </div>
+    </Layout>
   );
 }
 

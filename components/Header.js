@@ -21,18 +21,15 @@ function Header() {
     }
   }
 
-  useEffect(
-    () => {
-      if (router.route === "/") {
-        window.addEventListener("scroll", handleHomeHeader, { passive: true });
-      }
-      return () =>
-        window.removeEventListener("scroll", handleHomeHeader, {
-          passive: true
-        });
-    },
-    [scheme]
-  );
+  useEffect(() => {
+    if (router.route === "/") {
+      window.addEventListener("scroll", handleHomeHeader, { passive: true });
+    }
+    return () =>
+      window.removeEventListener("scroll", handleHomeHeader, {
+        passive: true
+      });
+  });
 
   return (
     <div
