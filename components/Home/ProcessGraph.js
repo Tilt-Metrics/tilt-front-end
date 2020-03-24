@@ -24,9 +24,11 @@ function ProcessGraph(props) {
   return (
     <svg
       version="1.1"
+      preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 835"
       width="100%"
-      viewBox="0 0 1350 745"
+      overflow="visible"
     >
       <defs>
         <linearGradient
