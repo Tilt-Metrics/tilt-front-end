@@ -8,7 +8,9 @@ import Logo from "./Logo";
 
 function Header() {
   const router = useRouter();
-  const [scheme, setScheme] = useState("light");
+  const [scheme, setScheme] = useState(
+    router.route === "/" ? "light" : "normal"
+  );
 
   function handleHomeHeader() {
     const headerHeight = document.querySelector("#hero").clientHeight;
@@ -36,10 +38,11 @@ function Header() {
       css={theme => ({
         width: "100%",
         position: "fixed",
+        background: scheme === "light" ? "none" : theme.colors.slate,
         padding: `${theme.spacing[0]}`,
         top: 0,
         left: 0,
-        zIndex: 999
+        zIndex: 999999
       })}
     >
       <Wrapper>
