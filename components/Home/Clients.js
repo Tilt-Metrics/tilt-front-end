@@ -23,7 +23,7 @@ function Clients(props) {
           css={theme => ({
             color: theme.colors.brightBlue,
             display: "block",
-            marginBottom: theme.spacing[2],
+            marginBottom: theme.spacing[1],
             textTransform: "uppercase",
             fontWeight: "bold"
           })}
