@@ -30,6 +30,7 @@ export default function(props) {
   return (
     <InView
       as="div"
+      id="process"
       threshold={[0.1]}
       onChange={inView => (inView ? setVisible(true) : setVisible(false))}
       css={theme => ({
