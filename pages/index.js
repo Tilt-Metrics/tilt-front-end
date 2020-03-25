@@ -21,7 +21,12 @@ export default function({ data }) {
         headline={data.clients.headline}
         logos={data.clients.logos}
       />
-      <Process items={data.process} />
+      <Process
+        label={data.process.label}
+        headline={data.process.headline}
+        subheadline={data.process.subheadline}
+        items={data.process.processes}
+      />
       <Testimonial
         quote={data.testimonial.quote}
         author={data.testimonial.author}
