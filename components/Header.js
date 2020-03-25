@@ -67,14 +67,28 @@ function Header() {
           >
             <ul
               css={theme => ({
-                color: scheme === "light" ? "white" : theme.colors.coral,
                 "& a": {
-                  textDecoration: "none"
+                  color: scheme === "light" ? "white" : theme.colors.coral,
+                  textDecoration: "none",
+                  "&:hover": {
+                    borderBottom:
+                      scheme === "light"
+                        ? "2px solid white"
+                        : `2px solid ${theme.colors.coral}`
+                  }
                 }
               })}
             >
-              <li>Services</li>
-              <li>Clients</li>
+              <li>
+                <Link href="/#services">
+                  <a>Services</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#process">
+                  <a>Process</a>
+                </Link>
+              </li>
               <li>
                 <Link href="/case-studies/">
                   <a>Case Studies</a>
