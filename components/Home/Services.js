@@ -7,7 +7,7 @@ import Text from "../UI/Text";
 
 function Services(props) {
   return (
-    <Wrapper id="services">
+    <Wrapper id="services" css={theme => ({ marginBottom: theme.spacing[2] })}>
       <Text
         size={0}
         spacing={0}
