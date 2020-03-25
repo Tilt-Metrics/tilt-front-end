@@ -10,6 +10,7 @@ function Services(props) {
     <Wrapper id="services">
       <Text
         size={0}
+        spacing={0}
         color="brightBlue"
         uppercase
         bold
@@ -20,6 +21,7 @@ function Services(props) {
       <Headline
         size={1}
         as="h2"
+        spacing={0}
         css={{
           textAlign: "center"
         }}
@@ -27,6 +29,7 @@ function Services(props) {
         {props.headline}
       </Headline>
       <Text
+        spacing={2}
         css={{
           textAlign: "center"
         }}
