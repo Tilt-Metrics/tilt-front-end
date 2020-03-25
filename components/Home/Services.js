@@ -7,7 +7,7 @@ import Text from "../UI/Text";
 
 function Services(props) {
   return (
-    <Wrapper>
+    <Wrapper id="services">
       <Text
         size={0}
         color="brightBlue"
