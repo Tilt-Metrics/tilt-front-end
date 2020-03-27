@@ -40,7 +40,7 @@ function Footer() {
               <g
                 id="Landing-Page"
                 stroke="none"
-                stroke-width="1"
+                strokeWidth="1"
                 fill="none"
                 fillRule="evenodd"
               >
@@ -140,11 +140,10 @@ function Footer() {
             />
             <div
               className="clutch-widget"
-              data-url="https://widget.clutch.co"
-              data-widget-type="2"
-              dataHeight="34"
-              data-darkbg="1"
-              data-clutchcompany-id="474669"
+              {...{ "data-url": "https://widget.clutch.co" }}
+              {...{ "data-widget-type": "2" }}
+              {...{ "data-darkbg": "1" }}
+              {...{ "data-clutchcompany-id": "474669" }}
             />
             <div className="ggl">
               <script src="https://apis.google.com/js/platform.js" />
