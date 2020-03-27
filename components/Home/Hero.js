@@ -30,7 +30,7 @@ function Hero(props) {
           textAlign: "center"
         })}
       >
-        <Headline display>{props.headline}</Headline>
+        <Headline displayFont={true}>{props.headline}</Headline>
         <Headline as="h2" size={1}>
           {props.subheadline}
         </Headline>
