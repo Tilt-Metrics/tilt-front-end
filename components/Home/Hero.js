@@ -31,7 +31,7 @@ function Hero(props) {
         })}
       >
         <Headline displayFont={true}>{props.headline}</Headline>
-        <Headline as="h2" size={1}>
+        <Headline as="h2" size={0}>
           {props.subheadline}
         </Headline>
       </div>
