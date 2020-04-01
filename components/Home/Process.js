@@ -89,7 +89,7 @@ export default function(props) {
         <div
           ref={ref}
           css={{
-            zIndex: 99999,
+            zIndex: 9999,
             position: "relative"
           }}
         >
