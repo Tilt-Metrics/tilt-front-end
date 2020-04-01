@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import { mq } from "../lib/utils";
 
 function Footer() {
   return (
@@ -26,12 +27,13 @@ function Footer() {
         })}
       >
         <div
-          css={{
+          css={mq({
             display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr"
-          }}
+            gridTemplateColumns: ["repeat(1, 1fr)", "1fr 1fr 1fr 1fr 1fr"],
+            gridRowGap: ["30px", "auto"]
+          })}
         >
-          <div css={{ gridColumn: "1/2" }}>
+          <div css={mq({ display: ["none", "block"], gridColumn: "1/2" })}>
             <svg
               viewBox="0 0 230 34"
               version="1.1"
@@ -54,7 +56,7 @@ function Footer() {
               </g>
             </svg>
           </div>
-          <div css={{ gridColumn: "2/4" }}>
+          <div css={mq({ gridColumn: ["auto", "2/4"] })}>
             <div
               css={theme => ({
                 marginBottom: theme.spacing[0]
