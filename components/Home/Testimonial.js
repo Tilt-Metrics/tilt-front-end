@@ -29,7 +29,7 @@ function Testimonial(props) {
                 backgroundColor: theme.colors.slate,
                 maxWidth: theme.maxWidths[0],
                 height: "100%",
-                postion: "realtive",
+                position: "relative",
                 width: "100%",
                 padding: ["30px", "70px 108px"],
                 zIndex: 10
