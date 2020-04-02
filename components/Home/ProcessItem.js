@@ -1,17 +1,19 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import { mq } from "../../lib/utils";
 
 function ProcessItem(props) {
   return (
     <div
-      css={{
+      css={mq({
         display: "grid",
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: ["repeat(1, 1fr)", "1fr 1fr"],
         maxWidth: 960,
         gridGap: "40px",
         margin: "0 auto",
-        minHeight: "60vh"
-      }}
+        minHeight: "60vh",
+        padding: "0 30px"
+      })}
     >
       <div
         css={{
