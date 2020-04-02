@@ -76,12 +76,13 @@ function Header() {
             </div>
             <div
               onClick={() => (!open ? setOpen(true) : setOpen(false))}
-              css={{
+              css={mq({
+                display: ["block", "none"],
                 cursor: "pointer",
                 position: "relative",
                 height: 32,
                 width: 32
-              }}
+              })}
             >
               <span
                 css={theme => ({
@@ -160,7 +161,13 @@ function Header() {
           </div>
         </Wrapper>
       </div>
-      <div css={{ opacity: open ? 1 : 0 }}>
+      <div
+        css={mq({
+          opacity: open ? 1 : 0,
+          display: ["block", "none"],
+          pointerEvents: open ? "auto" : "none"
+        })}
+      >
         <MobileMenu />
       </div>
     </>
