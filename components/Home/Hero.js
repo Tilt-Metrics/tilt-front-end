@@ -35,6 +35,15 @@ function Hero(props) {
           {props.subheadline}
         </Headline>
       </div>
+      <img
+        css={{
+          position: "absolute",
+          bottom: 0,
+          left: "50%",
+          transform: "translateX(-50%)"
+        }}
+        src="/img/hero-fg.png"
+      />
     </div>
   );
 }
