@@ -12,13 +12,19 @@ function Entry(props) {
         css={theme => ({
           textDecoration: "none",
           display: "block",
+          color: "black",
           transition: ".3s ease",
           "&:hover": {
             backgroundColor: theme.colors.slate
           }
         })}
       >
-        <div css={theme => ({ padding: theme.spacing[1] })}>
+        <div
+          css={theme => ({
+            padding: theme.spacing[1],
+            marginBottom: theme.spacing[2]
+          })}
+        >
           <Headline as="h2" size={1}>
             {convert(props.headline)}
           </Headline>
