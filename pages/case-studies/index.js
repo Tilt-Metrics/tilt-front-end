@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import convert from "htmr";
 import Wrapper from "../../components/UI/Wrapper";
 import Entry from "../../components/CaseStudies/Entry";
 
