@@ -4,12 +4,16 @@ import { jsx } from "@emotion/core";
 function handleSubmit(e) {
   const formData = document.querySelector("#form");
   e.preventDefault();
-  console.log(e);
+  console.log(formData);
   fetch(
     "https://admin.tiltmetrics.com/wp-json/contact-form-7/v1/contact-forms/76/feedback/",
     {
       method: "POST",
-      body: formData
+      body: {
+        "your-name": "Test",
+        "your-email": "chris@wynncodes.com",
+        "your-message": "Hello"
+      }
     }
   )
     .then(e => {

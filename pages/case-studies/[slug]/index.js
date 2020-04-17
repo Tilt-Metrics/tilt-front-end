@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import Layout from "../../../components/Layout";
 import { jsx } from "@emotion/core";
 import convert from "htmr";
 import Wrapper from "../../../components/UI/Wrapper";
@@ -18,46 +17,44 @@ export default function({ data, authorData }) {
   const bodyCopy = convert(data.content.rendered, { transform });
 
   return (
-    <Layout>
-      <Wrapper
-        width={0}
+    <Wrapper
+      width={0}
+      css={theme => ({
+        marginBottom: theme.spacing[3],
+        marginTop: theme.spacing[3]
+      })}
+    >
+      <Headline
+        display
+        as="h1"
+        css={theme => ({ color: theme.colors.brightBlue })}
+      >
+        {headline}
+      </Headline>
+      <Wrapper size={0}>{bodyCopy}</Wrapper>
+      <div
         css={theme => ({
-          marginBottom: theme.spacing[3],
-          marginTop: theme.spacing[3]
+          backgroundColor: theme.colors.slate,
+          display: "flex",
+          alignItems: "center",
+          padding: theme.spacing[1],
+          justifyContent: "center",
+          flexDirection: "column",
+          textAlign: "center"
         })}
       >
-        <Headline
-          display
-          as="h1"
-          css={theme => ({ color: theme.colors.brightBlue })}
-        >
-          {headline}
-        </Headline>
-        <Wrapper size={0}>{bodyCopy}</Wrapper>
-        <div
+        <img
           css={theme => ({
-            backgroundColor: theme.colors.slate,
-            display: "flex",
-            alignItems: "center",
-            padding: theme.spacing[1],
-            justifyContent: "center",
-            flexDirection: "column",
-            textAlign: "center"
+            borderRadius: "100%",
+            maxWidth: "75px",
+            marginBottom: theme.spacing[0]
           })}
-        >
-          <img
-            css={theme => ({
-              borderRadius: "100%",
-              maxWidth: "75px",
-              marginBottom: theme.spacing[0]
-            })}
-            src={authorData.avatar_urls["96"]}
-          />
-          <Text spacing={0}>{authorData.name}</Text>
-          <Text>{convert(authorData.description)}</Text>
-        </div>
-      </Wrapper>
-    </Layout>
+          src={authorData.avatar_urls["96"]}
+        />
+        <Text spacing={0}>{authorData.name}</Text>
+        <Text>{convert(authorData.description)}</Text>
+      </div>
+    </Wrapper>
   );
 }
 

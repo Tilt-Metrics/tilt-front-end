@@ -147,12 +147,12 @@ function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/case-studies/">
+                  <Link href="/case-studies" passHref>
                     <a>Case Studies</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact/">
+                  <Link href="/contact/" scroll={false}>
                     <a>Contact</a>
                   </Link>
                 </li>
