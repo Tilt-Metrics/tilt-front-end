@@ -1,7 +1,6 @@
 import "minireset.css";
 import { Global, css } from "@emotion/core";
 import { ThemeProvider } from "emotion-theming";
-import Layout from "../components/Layout";
 
 import theme from "../lib/theme";
 
@@ -19,9 +18,7 @@ export default function({ Component, pageProps }) {
         `}
       />
       <ThemeProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );

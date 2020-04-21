@@ -1,25 +1,28 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import Layout from "../../components/Layout";
 import Wrapper from "../../components/UI/Wrapper";
 import Entry from "../../components/CaseStudies/Entry";
 
 export default function({ data }) {
   return (
-    <Wrapper
-      width={0}
-      css={theme => ({
-        marginBottom: theme.spacing[3],
-        marginTop: theme.spacing[3]
-      })}
-    >
-      {data.map(d => (
-        <Entry
-          headline={d.title.rendered}
-          slug={d.slug}
-          excerpt={d.excerpt.rendered}
-        />
-      ))}
-    </Wrapper>
+    <Layout>
+      <Wrapper
+        width={0}
+        css={theme => ({
+          marginBottom: theme.spacing[3],
+          marginTop: theme.spacing[3]
+        })}
+      >
+        {data.map(d => (
+          <Entry
+            headline={d.title.rendered}
+            slug={d.slug}
+            excerpt={d.excerpt.rendered}
+          />
+        ))}
+      </Wrapper>
+    </Layout>
   );
 }
 

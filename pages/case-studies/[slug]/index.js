@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import convert from "htmr";
+import Layout from "../../../components/Layout";
 import Wrapper from "../../../components/UI/Wrapper";
 import Headline from "../../../components/UI/Headline";
 import Text from "../../../components/UI/Text";
@@ -17,44 +18,46 @@ export default function({ data, authorData }) {
   const bodyCopy = convert(data.content.rendered, { transform });
 
   return (
-    <Wrapper
-      width={0}
-      css={theme => ({
-        marginBottom: theme.spacing[3],
-        marginTop: theme.spacing[3]
-      })}
-    >
-      <Headline
-        display
-        as="h1"
-        css={theme => ({ color: theme.colors.brightBlue })}
-      >
-        {headline}
-      </Headline>
-      <Wrapper size={0}>{bodyCopy}</Wrapper>
-      <div
+    <Layout>
+      <Wrapper
+        width={0}
         css={theme => ({
-          backgroundColor: theme.colors.slate,
-          display: "flex",
-          alignItems: "center",
-          padding: theme.spacing[1],
-          justifyContent: "center",
-          flexDirection: "column",
-          textAlign: "center"
+          marginBottom: theme.spacing[3],
+          marginTop: theme.spacing[3]
         })}
       >
-        <img
+        <Headline
+          display
+          as="h1"
+          css={theme => ({ color: theme.colors.brightBlue })}
+        >
+          {headline}
+        </Headline>
+        <Wrapper size={0}>{bodyCopy}</Wrapper>
+        <div
           css={theme => ({
-            borderRadius: "100%",
-            maxWidth: "75px",
-            marginBottom: theme.spacing[0]
+            backgroundColor: theme.colors.slate,
+            display: "flex",
+            alignItems: "center",
+            padding: theme.spacing[1],
+            justifyContent: "center",
+            flexDirection: "column",
+            textAlign: "center"
           })}
-          src={authorData.avatar_urls["96"]}
-        />
-        <Text spacing={0}>{authorData.name}</Text>
-        <Text>{convert(authorData.description)}</Text>
-      </div>
-    </Wrapper>
+        >
+          <img
+            css={theme => ({
+              borderRadius: "100%",
+              maxWidth: "75px",
+              marginBottom: theme.spacing[0]
+            })}
+            src={authorData.avatar_urls["96"]}
+          />
+          <Text spacing={0}>{authorData.name}</Text>
+          <Text>{convert(authorData.description)}</Text>
+        </div>
+      </Wrapper>
+    </Layout>
   );
 }
 
