@@ -153,6 +153,14 @@ function Footer() {
             </div>
           </div>
         </div>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TMG4NKJ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
       </footer>
     </div>
   );
