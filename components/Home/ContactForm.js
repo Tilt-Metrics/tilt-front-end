@@ -21,6 +21,10 @@ function ContactForm(props) {
       }
     )
       .then(e => {
+        window.dataLayer.push({
+          event: "formSubmitted",
+          formName: "Contact Form Home"
+        });
         setSubmitted(true);
       })
       .catch(err => console.log(err));
