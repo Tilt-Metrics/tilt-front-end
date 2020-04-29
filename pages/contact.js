@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import Head from "next/head";
 import Layout from "../components/Layout";
 import Wrapper from "../components/UI/Wrapper";
 import Headline from "../components/UI/Headline";
@@ -10,6 +11,9 @@ import ContactForm from "../components/Contact/ContactForm";
 export default function() {
   return (
     <Layout>
+      <Head>
+        <title>Contact</title>
+      </Head>
       <Wrapper
         css={theme => ({
           marginBottom: theme.spacing[3],

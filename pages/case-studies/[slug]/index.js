@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import Head from "next/head";
 import convert from "htmr";
 import Layout from "../../../components/Layout";
 import Wrapper from "../../../components/UI/Wrapper";
@@ -19,6 +20,10 @@ export default function({ data, authorData }) {
 
   return (
     <Layout>
+      <Head>
+        <title>{data.metatitle}</title>
+        <meta name="description" content={data.metadescription} />
+      </Head>
       <Wrapper
         width={0}
         css={theme => ({
